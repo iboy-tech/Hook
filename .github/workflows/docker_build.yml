@@ -31,9 +31,8 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: ${{ secrets.REMOTE_PORT }}
           script: |
-            docker rm -f coolqbot
             docker pull  iboytech/coolqbot
-            cd /root/bot
+            cd bot
             docker-compose up -d
 
   push_to_aliyun:
