@@ -19,9 +19,6 @@ nonebot-plugin-picsearcher = "^0.1.2"
 nonebot-plugin-sentry = "^0.1.1"
 nonebot-plugin-test = "^0.1.0"
 haruka-bot = "^1.1.2"
-httpx = "^0.16.1"
-asyncio = "^3.4.3"
-qrcode = "^6.1"
 psutil = "^5.8.0"
 emoji = "^0.6.0"
 google-trans-new = "^1.1.9"
@@ -29,6 +26,10 @@ typing-extensions = "^3.7.4"
 feedparser = "^6.0.2"
 retrying = "^1.3.3"
 pyquery = "^1.4.3"
+httpx = "^0.16.1"
+asyncio = "^3.4.3"
+qrcode = "^6.1"
+
 
 
 [tool.poetry.dev-dependencies]
