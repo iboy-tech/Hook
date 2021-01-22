@@ -5,7 +5,7 @@ ENV CHROME_BIN="/usr/bin/chromium-browser"
 ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock requirements.txt  bot.py docker-entrypoint.sh  ./
+COPY pyproject.toml poetry.lock   bot.py docker-entrypoint.sh  ./
 
 COPY ./data/static/font.ttf  /usr/share/fonts/
 
@@ -23,8 +23,6 @@ RUN set -ex; \
     source $HOME/.poetry/env; \
     poetry config virtualenvs.create false; \
     poetry install; \
-    poetry update; \
-    pip install -r requirements.txt; \
     rm -rf /var/cache/apk/*; \
     rm -rf /root/.cache; \
     rm -rf /tmp/* /var/tmp/* ;
