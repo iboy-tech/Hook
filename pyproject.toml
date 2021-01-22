@@ -32,7 +32,6 @@ pyquery = "^1.4.3"
 
 
 [tool.poetry.dev-dependencies]
-pyquery = "^1.4.3"
 nonebot-plugin-test = "^0.1.0"
 
 [build-system]
