@@ -6,10 +6,12 @@ ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
 WORKDIR /app
 
 COPY pyproject.toml poetry.lock  bot.py docker-entrypoint.sh  ./
+
 COPY ./data/static/font.ttf  /usr/share/fonts/
 
 RUN set -ex; \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories; \
+    chmod +x docker-entrypoint.sh; \
     apk --update  add --no-cache --virtual build-dependencies  build-base gcc   python3-dev musl-dev jpeg-dev libressl-dev libffi-dev libxslt-dev  zlib-dev  openssl-dev; \
     apk add --no-cache  tzdata; \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
