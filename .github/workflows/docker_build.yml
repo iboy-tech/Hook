@@ -33,6 +33,7 @@ jobs:
           script: |
             docker pull  iboytech/coolqbot
             cd bot
+            docker-compose down
             docker-compose up -d
 
   push_to_aliyun:
