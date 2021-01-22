@@ -150,4 +150,5 @@ HarukaBot
 cache
 *.cache
 *.image
+*.env
 
