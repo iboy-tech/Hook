@@ -23,6 +23,8 @@ RUN set -ex; \
     source $HOME/.poetry/env; \
     poetry config virtualenvs.create false; \
     poetry install; \
+    poetry update; \
+    poetry install; \
     rm -rf /var/cache/apk/*; \
     rm -rf /root/.cache; \
     rm -rf /tmp/* /var/tmp/* ;
