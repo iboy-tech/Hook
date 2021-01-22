@@ -4,8 +4,8 @@ services:
   coolqbot:
 #    build: .
 #    image: registry.cn-hangzhou.aliyuncs.com/iboy/coolqbot:latest
-#    image: coolqbot:latest
-    image: tbot:latest
+    image: iboytech/coolqbot:latest
+#    image: tbot:latest
     container_name: coolqbot
     restart: always
     volumes:
