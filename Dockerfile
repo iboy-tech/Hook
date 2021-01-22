@@ -21,7 +21,7 @@ RUN set -ex; \
     pip install -U setuptools pip; \
     python3 -m pip install poetry; \
     poetry config virtualenvs.create false; \
-    poetry install --no-root --no-dev; \
+    poetry install; \
     rm -rf /var/cache/apk/*; \
     rm -rf /root/.cache; \
     rm -rf /tmp/* /var/tmp/* ;
