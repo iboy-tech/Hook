@@ -143,12 +143,4 @@ dmypy.json
 .vscode/*
 !.vscode/launch.json
 .env.dev
-*.log
-*.silk
-userdata/*
-HarukaBot
-cache
-*.cache
-*.image
-.env.prod
-
+data/

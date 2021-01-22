@@ -10,7 +10,11 @@ driver = nonebot.get_driver()
 driver.register_adapter("cqhttp", CQHTTPBot)
 app = nonebot.get_asgi()
 
-
+@app.get("/robot")
+async def read_root():
+    version=3.8
+    message = f"Hello world! From FastAPI running on Uvicorn with Gunicorn. Using Python {version}"
+    return {"message": message}
 
 # 添加额外的配置
 config = nonebot.get_driver().config
