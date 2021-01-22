@@ -20,6 +20,7 @@ RUN set -ex; \
     pip install  --upgrade pip; \
     pip install -U setuptools pip; \
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python; \
+    source $HOME/.poetry/env; \
     poetry config virtualenvs.create false; \
     poetry install; \
     rm -rf /var/cache/apk/*; \
