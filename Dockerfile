@@ -12,14 +12,14 @@ COPY ./data/static/font.ttf  /usr/share/fonts/
 RUN set -ex; \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories; \
     apk --update  add --no-cache --virtual build-dependencies  build-base gcc   python3-dev musl-dev jpeg-dev libressl-dev libffi-dev libxslt-dev  zlib-dev  openssl-dev; \
-    apk add --no-cache  tzdata; \
+    apk add --no-cache  tzdata curl; \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
     echo "Asia/Shanghai" > /etc/timezone; \
-    apk add  --no-cache chromium dbus  udev; \
+    apk add  --no-cache chromium dbus; \
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple; \
     pip install  --upgrade pip; \
     pip install -U setuptools pip; \
-    python3 -m pip install poetry; \
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python; \
     poetry config virtualenvs.create false; \
     poetry install; \
     rm -rf /var/cache/apk/*; \
