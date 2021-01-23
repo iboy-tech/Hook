@@ -18,7 +18,6 @@ RUN set -ex; \
     echo "Asia/Shanghai" > /etc/timezone; \
     apk add  --no-cache chromium dbus; \
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple; \
-    pip install  --upgrade pip; \
     pip install -U setuptools pip; \
     python3 -m pip install poetry; \
     poetry config virtualenvs.create false; \
