@@ -16,7 +16,7 @@ RUN set -ex; \
     apk add --no-cache  tzdata; \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
     echo "Asia/Shanghai" > /etc/timezone; \
-    apk add  --no-cache chromium dbus  udev; \
+    apk add  --no-cache chromium dbus; \
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple; \
     pip install  --upgrade pip; \
     pip install -U setuptools pip; \
@@ -26,7 +26,7 @@ RUN set -ex; \
     pyppeteer-install; \
     rm -rf /var/cache/apk/*; \
     rm -rf /root/.cache; \
-    rm -rf /tmp/* /var/tmp/* ;
-#apk --purge del build-dependencies; \
+    rm -rf /tmp/* /var/tmp/* ;\
+    apk --purge del build-dependencies;
 
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
